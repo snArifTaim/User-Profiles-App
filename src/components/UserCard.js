@@ -12,7 +12,7 @@ export default function UserCard({ user, isFavorite, onAdd, onRemove }) {
             <Text style={styles.email}>{user.email}</Text>
             {isFavorite ? (
                 <TouchableOpacity style={styles.removeBtn} onPress={() => onRemove(user.id)}>
-                    <Text style={styles.btnText}><Entypo name="cross" size={16} color="red" /> Remove</Text>
+                    <Text style={styles.btnText}><Entypo name="cross" size={18} /> Remove</Text>
                 </TouchableOpacity>
             ) : (
                 <TouchableOpacity style={styles.addBtn} onPress={() => onAdd(user)}>
@@ -63,5 +63,6 @@ const styles = StyleSheet.create({
     btnText: {
         color: "#fff",
         fontWeight: "bold",
-        fontSize: 16,   },
+        fontSize: 16,
+    },
 });

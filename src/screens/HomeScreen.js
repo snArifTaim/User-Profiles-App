@@ -22,6 +22,7 @@ export default function HomeScreen() {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
+            <Text style={{ fontSize: 24, fontWeight: "bold", margin: 16, color: "#333", textAlign: "center" }}>All Users</Text>
         <FlatList
             data={users}
             keyExtractor={(item) => item.id.toString()}
