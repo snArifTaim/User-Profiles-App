@@ -12,11 +12,11 @@ export default function UserCard({ user, isFavorite, onAdd, onRemove }) {
             <Text style={styles.email}>{user.email}</Text>
             {isFavorite ? (
                 <TouchableOpacity style={styles.removeBtn} onPress={() => onRemove(user.id)}>
-                    <Text style={styles.btnText}><Entypo name="cross" size={24} color="red" /> Remove</Text>
+                    <Text style={styles.btnText}><Entypo name="cross" size={16} color="red" /> Remove</Text>
                 </TouchableOpacity>
             ) : (
                 <TouchableOpacity style={styles.addBtn} onPress={() => onAdd(user)}>
-                    <Text style={styles.btnText}><AntDesign name="star" size={24} color="yellow" /> Add to Favorites</Text>
+                    <Text style={styles.btnText}><AntDesign name="star" size={16} color="yellow" /> Add to Favorites</Text>
                 </TouchableOpacity>
             )}
         </View>
@@ -63,5 +63,5 @@ const styles = StyleSheet.create({
     btnText: {
         color: "#fff",
         fontWeight: "bold",
-    },
+        fontSize: 16,   },
 });

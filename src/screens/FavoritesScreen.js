@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { View, Text, FlatList, StyleSheet } from "react-native";
 import { UserContext } from "../context/UserContext";
 import UserCard from "../components/UserCard";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 export default function FavoritesScreen() {
@@ -18,13 +19,15 @@ export default function FavoritesScreen() {
 
 
     return (
-        <FlatList
-            data={favorites}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) => (
-                <UserCard user={item} isFavorite onRemove={removeFromFavorites} />
-            )}
-        />
+        <SafeAreaView style={{ flex: 1 }}>
+            <FlatList
+                data={favorites}
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({ item }) => (
+                    <UserCard user={item} isFavorite onRemove={removeFromFavorites} />
+                )}
+            />
+        </ SafeAreaView>
     );
 }
 

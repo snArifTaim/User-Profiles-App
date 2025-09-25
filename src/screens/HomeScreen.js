@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { View, Text, FlatList, ActivityIndicator, StyleSheet, Button } from "react-native";
 import { UserContext } from "../context/UserContext";
 import UserCard from "../components/UserCard";
-
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
     const { users, favorites, addToFavorites, loading, error } = useContext(UserContext);
@@ -21,6 +21,7 @@ export default function HomeScreen() {
 
 
     return (
+        <SafeAreaView style={{ flex: 1 }}>
         <FlatList
             data={users}
             keyExtractor={(item) => item.id.toString()}
@@ -32,6 +33,7 @@ export default function HomeScreen() {
                 />
             )}
         />
+        </ SafeAreaView>
     );
 }
 
